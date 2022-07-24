@@ -1,0 +1,31 @@
+{
+  "files": {
+    "main.css": "/static/css/main.3a87faa8.css",
+    "main.js": "/static/js/main.9b559e71.js",
+    "static/js/377.2bf5b29e.chunk.js": "/static/js/377.2bf5b29e.chunk.js",
+    "static/media/CV.pdf": "/static/media/CV.5b44c128503c55906bbb.pdf",
+    "static/media/special-elite-all-400-normal.woff": "/static/media/special-elite-all-400-normal.1e0902671ac850fc619b.woff",
+    "static/media/special-elite-latin-400-normal.woff2": "/static/media/special-elite-latin-400-normal.210560970aebbb05cdc5.woff2",
+    "static/media/courier-prime-all-700-normal.woff": "/static/media/courier-prime-all-700-normal.0a59c1f9433e11fa5563.woff",
+    "static/media/courier-prime-all-400-normal.woff": "/static/media/courier-prime-all-400-normal.ee22bc9ddb6aa67eb4dc.woff",
+    "static/media/courier-prime-latin-700-normal.woff2": "/static/media/courier-prime-latin-700-normal.e1cf84d88312dea18503.woff2",
+    "static/media/courier-prime-latin-400-normal.woff2": "/static/media/courier-prime-latin-400-normal.9828a27d46cfbc788c63.woff2",
+    "static/media/profilePic-min.webp": "/static/media/profilePic-min.c4c54805b5b6a2ac90d2.webp",
+    "static/media/courier-prime-latin-ext-700-normal.woff2": "/static/media/courier-prime-latin-ext-700-normal.9b34b913423aaf5156d1.woff2",
+    "static/media/courier-prime-latin-ext-400-normal.woff2": "/static/media/courier-prime-latin-ext-400-normal.5f815ad51fabfda18bb0.woff2",
+    "static/media/oasis-min.webp": "/static/media/oasis-min.6ebc261293e19e4bb7a2.webp",
+    "static/media/curiosone-min.webp": "/static/media/curiosone-min.c5c6aa049ec471b20bba.webp",
+    "static/media/30poems-min.webp": "/static/media/30poems-min.0a2cf35c84edbefb3722.webp",
+    "static/media/feedTheAlgorithm-min.webp": "/static/media/feedTheAlgorithm-min.9c09adf14019050e9108.webp",
+    "static/media/melancholia-min.webp": "/static/media/melancholia-min.d6970f0990804d7e6e93.webp",
+    "static/media/corsoDataScience-min.webp": "/static/media/corsoDataScience-min.08f11ec934f910082e93.webp",
+    "index.html": "/index.html",
+    "main.3a87faa8.css.map": "/static/css/main.3a87faa8.css.map",
+    "main.9b559e71.js.map": "/static/js/main.9b559e71.js.map",
+    "377.2bf5b29e.chunk.js.map": "/static/js/377.2bf5b29e.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.3a87faa8.css",
+    "static/js/main.9b559e71.js"
+  ]
+}

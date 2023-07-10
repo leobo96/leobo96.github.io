@@ -1,9 +1,9 @@
 {
   "files": {
     "main.css": "/static/css/main.3a87faa8.css",
-    "main.js": "/static/js/main.9b559e71.js",
+    "main.js": "/static/js/main.73a45431.js",
     "static/js/377.2bf5b29e.chunk.js": "/static/js/377.2bf5b29e.chunk.js",
-    "static/media/CV.pdf": "/static/media/CV.5b44c128503c55906bbb.pdf",
+    "static/media/LeonardoBonaventuraFrontendDeveloper.pdf": "/static/media/LeonardoBonaventuraFrontendDeveloper.860a7e9e69de989b6680.pdf",
     "static/media/special-elite-all-400-normal.woff": "/static/media/special-elite-all-400-normal.1e0902671ac850fc619b.woff",
     "static/media/special-elite-latin-400-normal.woff2": "/static/media/special-elite-latin-400-normal.210560970aebbb05cdc5.woff2",
     "static/media/courier-prime-all-700-normal.woff": "/static/media/courier-prime-all-700-normal.0a59c1f9433e11fa5563.woff",
@@ -21,11 +21,11 @@
     "static/media/corsoDataScience-min.webp": "/static/media/corsoDataScience-min.08f11ec934f910082e93.webp",
     "index.html": "/index.html",
     "main.3a87faa8.css.map": "/static/css/main.3a87faa8.css.map",
-    "main.9b559e71.js.map": "/static/js/main.9b559e71.js.map",
+    "main.73a45431.js.map": "/static/js/main.73a45431.js.map",
     "377.2bf5b29e.chunk.js.map": "/static/js/377.2bf5b29e.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.3a87faa8.css",
-    "static/js/main.9b559e71.js"
+    "static/js/main.73a45431.js"
   ]
 }

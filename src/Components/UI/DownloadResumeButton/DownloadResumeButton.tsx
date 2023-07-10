@@ -1,7 +1,7 @@
 import { Button, Link } from "@chakra-ui/react";
 import React from "react";
 import { HiDownload } from "react-icons/hi";
-import curriculum from "../../../Assets/CV.pdf";
+import curriculum from "src/Assets/LeonardoBonaventuraFrontendDeveloper.pdf";
 
 export const DownloadResumeButton: React.FC<{
   label?: string;

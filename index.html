@@ -1,0 +1,645 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Leonardo Bonaventura — Full Stack Engineer</title>
+  <meta name="description" content="Full Stack Engineer with 3+ years in Fintech SaaS. Specialized in developer experience, testing infrastructure, and product-minded engineering.">
+  <meta property="og:title" content="Leonardo Bonaventura — Full Stack Engineer">
+  <meta property="og:description" content="Product-minded engineer specializing in DX, testing, and Fintech SaaS architecture.">
+  <meta property="og:type" content="website">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+    :root {
+      --bg: #fefcf3;
+      --surface: #ffffff;
+      --surface-hover: #faf5eb;
+      --border: #e8e0d0;
+      --text: #292524;
+      --text-muted: #78716c;
+      --accent: #b45309;
+      --accent-glow: rgba(180, 83, 9, 0.08);
+      --accent-subtle: rgba(180, 83, 9, 0.06);
+      --green: #15803d;
+      --orange: #c2410c;
+      --pink: #be185d;
+      --radius: 12px;
+      --font-display: 'DM Serif Display', Georgia, serif;
+      --font-body: 'Inter', -apple-system, sans-serif;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: var(--font-body);
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* NAV */
+    nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+      background: rgba(254, 252, 243, 0.85);
+      backdrop-filter: blur(20px);
+      border-bottom: 1px solid transparent;
+      padding: 0 2rem;
+      height: 56px;
+      display: flex; align-items: center; justify-content: space-between;
+    }
+    nav .logo { font-family: var(--font-display); font-weight: 400; font-size: 1.1rem; color: var(--accent); letter-spacing: 0; }
+    nav .links { display: flex; gap: 1.5rem; }
+    nav .links a {
+      color: var(--text-muted); text-decoration: none; font-size: 0.85rem;
+      font-weight: 500; transition: color 0.2s;
+    }
+    nav .links a:hover { color: var(--text); }
+    nav .links a.active { color: var(--accent); }
+
+    /* HERO */
+    .hero {
+      min-height: 100vh;
+      display: flex; flex-direction: column; justify-content: center; align-items: center;
+      text-align: center;
+      padding: 6rem 2rem 4rem;
+      position: relative;
+      overflow: hidden;
+    }
+    .hero::before {
+      content: '';
+      position: absolute; top: -40%; left: 50%; transform: translateX(-50%);
+      width: 800px; height: 800px;
+      background: radial-gradient(circle, var(--accent-glow) 0%, transparent 70%);
+      pointer-events: none;
+    }
+    .hero .badge {
+      display: inline-flex; align-items: center; gap: 0.5rem;
+      background: var(--accent-subtle); border: 1px solid rgba(180, 83, 9, 0.2);
+      padding: 0.4rem 1rem; border-radius: 100px;
+      font-size: 0.8rem; color: var(--accent); font-weight: 500;
+      margin-bottom: 1.5rem;
+      animation: fadeUp 0.6s ease both;
+    }
+    .hero .badge .dot { width: 6px; height: 6px; border-radius: 50%; background: #16a34a; animation: pulse 2s infinite; }
+    @keyframes pulse { 0%, 100% { opacity: 1; } 50% { opacity: 0.4; } }
+    .hero h1 {
+      font-family: var(--font-display);
+      font-size: clamp(2.5rem, 6vw, 4.5rem);
+      font-weight: 400; letter-spacing: -0.01em;
+      line-height: 1.1; margin-bottom: 1rem;
+      animation: fadeUp 0.6s ease 0.1s both;
+    }
+    .hero .thesis {
+      font-family: var(--font-display);
+      font-size: clamp(1.5rem, 3vw, 2.2rem);
+      color: var(--accent);
+      line-height: 1.3;
+      margin-bottom: 1rem;
+      animation: fadeUp 0.6s ease 0.15s both;
+    }
+    .hero .subtitle {
+      font-size: 1.05rem; color: var(--text-muted); max-width: 520px;
+      letter-spacing: 0.01em; line-height: 1.65;
+      animation: fadeUp 0.6s ease 0.2s both;
+    }
+    .hero .cta {
+      display: flex; gap: 1rem; margin-top: 2.5rem;
+      animation: fadeUp 0.6s ease 0.3s both;
+    }
+    .hero .cta a {
+      padding: 0.7rem 1.5rem; border-radius: 100px; font-size: 0.9rem;
+      font-weight: 600; text-decoration: none; transition: all 0.25s;
+    }
+    .hero .cta .primary {
+      background: var(--accent); color: #fff;
+    }
+    .hero .cta .primary:hover { filter: brightness(1.15); transform: translateY(-1px); }
+    .hero .cta .secondary {
+      background: var(--surface); color: var(--text); border: 1px solid var(--border);
+    }
+    .hero .cta .secondary:hover { border-color: var(--accent); }
+
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    /* SECTIONS */
+    section { padding: 5rem 2rem; max-width: 900px; margin: 0 auto; }
+    .section-label {
+      font-family: var(--font-body);
+      font-size: 0.75rem; font-weight: 600; text-transform: uppercase;
+      letter-spacing: 0.12em; color: var(--accent); margin-bottom: 0.75rem;
+    }
+    .section-title {
+      font-family: var(--font-display);
+      font-size: 2rem; font-weight: 400; letter-spacing: 0; margin-bottom: 2.5rem;
+    }
+
+    /* PROOF */
+    .proof-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 1.5rem;
+    }
+    .proof-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 1.5rem;
+      text-align: center;
+      transition: border-color 0.3s, transform 0.2s;
+    }
+    .proof-card:hover {
+      border-color: var(--accent);
+      transform: translateY(-2px);
+    }
+    .proof-number {
+      font-family: var(--font-display);
+      font-size: 2.5rem;
+      color: var(--accent);
+      line-height: 1;
+      margin-bottom: 0.3rem;
+    }
+    .proof-label {
+      font-size: 0.9rem;
+      font-weight: 600;
+      color: var(--text);
+      margin-bottom: 0.2rem;
+    }
+    .proof-detail {
+      font-size: 0.8rem;
+      color: var(--text-muted);
+    }
+
+    /* SUMMARY */
+    .summary-card {
+      background: var(--surface); border: 1px solid var(--border);
+      border-radius: var(--radius); padding: 2rem;
+      font-size: 1.05rem; color: var(--text-muted); line-height: 1.75;
+    }
+    .summary-card strong { color: var(--text); font-weight: 600; }
+
+    /* SKILLS */
+    .skills-grid {
+      display: grid; grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+      gap: 1rem;
+    }
+    .skills-stories {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));
+      gap: 1.5rem;
+    }
+    .skill-story {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 1.5rem;
+      transition: border-color 0.3s, transform 0.2s;
+    }
+    .skill-story:hover {
+      border-color: var(--accent);
+      transform: translateY(-2px);
+    }
+    .skill-story-head {
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+      margin-bottom: 0.6rem;
+    }
+    .skill-story-icon { font-size: 1.2rem; }
+    .skill-story-head h3 {
+      font-size: 0.95rem;
+      font-weight: 600;
+      color: var(--text);
+      margin: 0;
+    }
+    .skill-story p {
+      font-size: 0.88rem;
+      color: var(--text-muted);
+      line-height: 1.6;
+      margin-bottom: 0.75rem;
+    }
+    .skill-story-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.35rem;
+    }
+    .skill-story-tags span {
+      padding: 0.2rem 0.55rem;
+      border-radius: 6px;
+      font-size: 0.72rem;
+      font-weight: 500;
+      background: var(--accent-subtle);
+      color: var(--accent);
+      border: 1px solid rgba(180, 83, 9, 0.12);
+    }
+
+    /* EXPERIENCE */
+    .timeline { position: relative; }
+    .timeline::before {
+      content: ''; position: absolute; left: 0; top: 0; bottom: 0;
+      width: 2px; background: var(--border);
+    }
+    .exp-item {
+      position: relative; padding-left: 2rem; margin-bottom: 3rem;
+    }
+    .js .exp-item {
+      opacity: 0; transform: translateY(20px);
+      transition: opacity 0.5s, transform 0.5s;
+    }
+    .exp-item.visible { opacity: 1; transform: translateY(0); }
+    .exp-item::before {
+      content: ''; position: absolute; left: -5px; top: 8px;
+      width: 12px; height: 12px; border-radius: 50%;
+      background: var(--accent); border: 2px solid var(--bg);
+    }
+    .exp-header {
+      display: flex; justify-content: space-between; align-items: flex-start;
+      flex-wrap: wrap; gap: 0.5rem; margin-bottom: 0.5rem;
+    }
+    .exp-role { font-family: var(--font-display); font-size: 1.2rem; font-weight: 400; }
+    .exp-company { color: var(--accent); font-weight: 600; }
+    .exp-meta { font-size: 0.82rem; color: var(--text-muted); margin-bottom: 1rem; }
+    .exp-desc {
+      color: var(--text-muted); font-size: 0.92rem; margin-bottom: 1rem;
+    }
+    .exp-details { list-style: none; }
+    .exp-details li {
+      position: relative; padding-left: 1.2rem; margin-bottom: 0.6rem;
+      font-size: 0.88rem; color: var(--text-muted);
+    }
+    .exp-details li::before {
+      content: '→'; position: absolute; left: 0; color: var(--accent);
+      font-weight: 600;
+    }
+    .exp-details li strong { color: var(--text); font-weight: 600; }
+
+    /* EDUCATION */
+    .edu-grid { display: grid; gap: 1rem; }
+    .edu-card {
+      background: var(--surface); border: 1px solid var(--border);
+      border-radius: var(--radius); padding: 1.5rem;
+      transition: border-color 0.3s;
+    }
+    .edu-card:hover { border-color: var(--accent); }
+    .edu-card h3 { font-size: 1rem; font-weight: 700; margin-bottom: 0.3rem; }
+    .edu-card .school { color: var(--accent); font-size: 0.88rem; font-weight: 500; }
+    .edu-card .year { color: var(--text-muted); font-size: 0.82rem; }
+    .edu-card .grade { color: var(--green); font-size: 0.82rem; font-weight: 600; }
+
+    /* CONTACT */
+    .contact-links {
+      display: flex; flex-wrap: wrap; gap: 1rem;
+    }
+    .contact-link {
+      display: inline-flex; align-items: center; gap: 0.6rem;
+      background: var(--surface); border: 1px solid var(--border);
+      padding: 0.8rem 1.3rem; border-radius: var(--radius);
+      color: var(--text); text-decoration: none; font-size: 0.9rem;
+      font-weight: 500; transition: all 0.25s;
+    }
+    .contact-link:hover { border-color: var(--accent); transform: translateY(-2px); }
+    .contact-link .icon { font-size: 1.1rem; }
+
+    /* FOOTER */
+    footer {
+      text-align: center; padding: 3rem 2rem;
+      border-top: 1px solid var(--border);
+    }
+    .footer-inner {
+      max-width: 900px; margin: 0 auto;
+      display: flex; flex-direction: column; align-items: center; gap: 0.5rem;
+    }
+    .footer-thesis {
+      font-family: var(--font-display);
+      font-size: 0.95rem; color: var(--text-muted);
+      font-style: italic;
+    }
+    .footer-credit {
+      font-size: 0.78rem; color: var(--text-muted);
+    }
+
+    /* MOBILE */
+    @media (max-width: 640px) {
+      nav .links { gap: 1rem; }
+      nav .links a { font-size: 0.8rem; padding: 0.5rem 0.3rem; }
+      .hero h1 { font-size: 2.2rem; }
+      .skills-stories { grid-template-columns: 1fr; }
+      .exp-header { flex-direction: column; }
+      .contact-links { flex-direction: column; }
+    }
+
+    /* REDUCED MOTION */
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+      }
+      html { scroll-behavior: auto; }
+    }
+
+    /* PRINT */
+    @media print {
+      body { background: #fff; color: #000; font-size: 11pt; }
+      nav, .skip-link, .hero .cta, .cta-group, footer, .section-label { display: none; }
+      section { padding: 1.5rem 0; }
+      .hero { padding-top: 0; }
+      .hero h1 { font-size: 1.6rem; color: #000; animation: none; }
+      .hero .subtitle { color: #333; animation: none; }
+      .proof-grid { grid-template-columns: repeat(2, 1fr); gap: 0.75rem; }
+      .proof-card { border: 1px solid #ccc; padding: 0.75rem; }
+      .proof-number { font-size: 1.5rem; }
+      .skills-stories { grid-template-columns: 1fr 1fr; gap: 0.75rem; }
+      .skill-story { border: 1px solid #ccc; padding: 0.75rem; }
+      .exp-item { page-break-inside: avoid; }
+      .exp-details li { margin-bottom: 0.3rem; }
+      .contact-links { justify-content: center; gap: 1rem; }
+      .contact-links a { color: #000; text-decoration: none; }
+      .contact-links a::after { content: " (" attr(href) ")"; font-size: 0.7rem; color: #666; }
+      .footer-thesis { color: #333; }
+      .footer-credit { color: #666; }
+    }
+
+    /* SKIP TO CONTENT */
+    .skip-link {
+      position: absolute; top: -100%; left: 1rem;
+      background: var(--accent); color: #fff;
+      padding: 0.6rem 1.2rem; border-radius: 0 0 8px 8px;
+      font-size: 0.85rem; font-weight: 600; z-index: 200;
+      text-decoration: none; transition: top 0.2s;
+    }
+    .skip-link:focus { top: 0; }
+
+    /* FOCUS STYLES */
+    a:focus-visible, button:focus-visible {
+      outline: 2px solid var(--accent);
+      outline-offset: 2px;
+    }
+  </style>
+</head>
+<body>
+
+<a href="#about" class="skip-link">Skip to content</a>
+
+<nav aria-label="Main navigation">
+  <div class="logo" aria-hidden="true">LB</div>
+  <div class="links">
+    <a href="#proof">Proof</a>
+    <a href="#about">About</a>
+    <a href="#skills">Skills</a>
+    <a href="#experience">Experience</a>
+    <a href="#education">Education</a>
+    <a href="#contact">Contact</a>
+  </div>
+</nav>
+
+<main id="main-content">
+
+<!-- HERO -->
+<header id="hero" class="hero">
+  <div class="badge"><span class="dot"></span> Open to opportunities</div>
+  <h1>Leonardo Bonaventura</h1>
+  <p class="thesis">I studied how people think.<br>I build products they love.</p>
+  <p class="subtitle">Full Stack Engineer with a Psychology background — bridging user empathy with technical excellence in Fintech SaaS.</p>
+  <div class="cta">
+    <a href="#proof" class="primary">See the evidence</a>
+    <a href="#contact" class="secondary">Get in Touch</a>
+  </div>
+</header>
+
+<!-- PROOF -->
+<section id="proof">
+  <div class="section-label">Proof</div>
+  <h2 class="section-title">Numbers that matter</h2>
+  <div class="proof-grid">
+    <div class="proof-card">
+      <div class="proof-number">22 → 7</div>
+      <div class="proof-label">minutes deploy time</div>
+      <div class="proof-detail">Lambda → Hono consolidation</div>
+    </div>
+    <div class="proof-card">
+      <div class="proof-number">180+</div>
+      <div class="proof-label">Lambdas consolidated</div>
+      <div class="proof-detail">into 4 Hono apps</div>
+    </div>
+    <div class="proof-card">
+      <div class="proof-number">1,400+</div>
+      <div class="proof-label">Storybook stories</div>
+      <div class="proof-detail">UI component documentation</div>
+    </div>
+    <div class="proof-card">
+      <div class="proof-number">450+</div>
+      <div class="proof-label">tickets resolved</div>
+      <div class="proof-detail">user → Sentry → code</div>
+    </div>
+  </div>
+</section>
+
+<!-- SUMMARY -->
+<section id="about">
+  <div class="section-label">About</div>
+  <h2 class="section-title">The intersection</h2>
+  <div class="summary-card">
+    I studied how people think, decide, and get confused. Then I learned to build the systems that remove that confusion. My psychology background isn't a quirky biographical detail — it's the lens through which I approach every product decision. When I see a 3-step form, I see cognitive load. When I see error messages, I see lost users. When I see a slow deploy, I see a team blocked from shipping the thing that matters. At Plannix, this lens turned a scattered 180-Lambda backend into 4 coherent apps, a 0% test coverage into 1,400+ stories, and a complex financial planning frontend into something users can actually navigate.
+  </div>
+</section>
+
+<!-- SKILLS -->
+<section id="skills">
+  <div class="section-label">Skills</div>
+  <h2 class="section-title">What I bring</h2>
+  <div class="skills-stories">
+    <div class="skill-story">
+      <div class="skill-story-head">
+        <span class="skill-story-icon">🏗️</span>
+        <h3>Architecture & DX</h3>
+      </div>
+      <p>I consolidate fragmented codebases into coherent systems. Lambda → Hono migration cut deploy time by 68%. Monorepo tooling (pnpm, Turbo, Biome) that scales with the team.</p>
+      <div class="skill-story-tags">
+        <span>TypeScript</span><span>Hono</span><span>Node.js</span><span>AWS</span><span>SST</span><span>CQRS</span><span>DynamoDB</span>
+      </div>
+    </div>
+    <div class="skill-story">
+      <div class="skill-story-head">
+        <span class="skill-story-icon">🧪</span>
+        <h3>Testing Infrastructure</h3>
+      </div>
+      <p>I build test pyramids from zero. 250+ API regression tests, 220+ Playwright E2E specs, 1,400+ Storybook stories. CI/CD pipelines that catch bugs before they ship.</p>
+      <div class="skill-story-tags">
+        <span>Playwright</span><span>Vitest</span><span>Bruno</span><span>Storybook</span><span>GitHub Actions</span>
+      </div>
+    </div>
+    <div class="skill-story">
+      <div class="skill-story-head">
+        <span class="skill-story-icon">🎨</span>
+        <h3>Product Frontend</h3>
+      </div>
+      <p>I own complex, multi-step user flows. React 19 with react-hook-form, TanStack Query, and Zod. Form state, remote data, validation — orchestrated for cognitive ease.</p>
+      <div class="skill-story-tags">
+        <span>React 19</span><span>Next.js</span><span>TanStack Query</span><span>Zod</span><span>Tailwind</span>
+      </div>
+    </div>
+    <div class="skill-story">
+      <div class="skill-story-head">
+        <span class="skill-story-icon">🔍</span>
+        <h3>Observability & Quality</h3>
+      </div>
+      <p>I close the loop from user to code. Sentry monitoring, LaunchDarkly feature flags, Intercom support — 450+ tickets resolved by tracing bugs to their source.</p>
+      <div class="skill-story-tags">
+        <span>Sentry</span><span>LaunchDarkly</span><span>Feature Flags</span><span>Event-driven</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- EXPERIENCE -->
+<section id="experience">
+  <div class="section-label">Experience</div>
+  <h2 class="section-title">Where I've worked</h2>
+  <div class="timeline">
+
+    <!-- Plannix -->
+    <div class="exp-item">
+      <div class="exp-header">
+        <div>
+          <div class="exp-role">Product Engineer <span class="exp-company">— Plannix</span></div>
+          <div class="exp-meta">Milan (hybrid) · Oct 2023 – Present · B2C Fintech</div>
+        </div>
+      </div>
+      <p class="exp-desc">Personal financial planning platform. Led DX, architecture, and product frontend.</p>
+      <ul class="exp-details">
+        <li><strong>Monorepo from scratch</strong> — apps/packages layout, Biome, shared tsconfig, Turbo, and engineering guidelines.</li>
+        <li><strong>Built the test pyramid</strong> — 250+ Bruno API tests, 220+ Playwright specs, 1,400+ Storybook stories.</li>
+        <li><strong>CI/CD pipeline</strong> — typecheck, lint, Vitest, advisory checks on PR; UI tests on push; API regression post-deploy.</li>
+        <li><strong>Lambda → Hono consolidation</strong> — 180+ per-endpoint Lambdas into 4 Hono apps. Deploy: <strong>22 min → 7 min</strong>.</li>
+        <li><strong>CQRS + repository pattern</strong> — 120+ query handlers, 30+ command handlers across the backend.</li>
+        <li><strong>Build performance pass</strong> — cold typecheck cut ~35% (≈33s → 20s) by narrowing package exports and dropping heavy deps.</li>
+        <li><strong>Component library refactor</strong> — modular package refactor shipped incrementally behind feature flags, zero disruption.</li>
+        <li><strong>Roadmap questionnaire engine</strong> — 40+ sections, multi-currency runtime conversion, per-section persistence.</li>
+        <li><strong>Support-to-engineering workflow</strong> — Linear backlog hygiene, 450+ Intercom tickets resolved end-to-end.</li>
+      </ul>
+    </div>
+
+    <!-- Moneyfarm -->
+    <div class="exp-item">
+      <div class="exp-header">
+        <div>
+          <div class="exp-role">Frontend Engineer <span class="exp-company">— Moneyfarm (via Bitrock)</span></div>
+          <div class="exp-meta">Full remote · Oct 2022 – Oct 2023 · Digital Wealth Management (€4B+ AUM)</div>
+        </div>
+      </div>
+      <ul class="exp-details">
+        <li><strong>Multi-step onboarding flows</strong> — 5-step KYC journey handling sensitive financial data under regulatory compliance.</li>
+        <li><strong>Component library</strong> — 30+ reusable components adopted across 15+ features of the core platform.</li>
+        <li><strong>Cypress coverage</strong> — critical user flows (login, portfolio, onboarding) covered with e2e tests.</li>
+        <li><strong>Code review discipline</strong> — active reviewer across 5-person distributed team, enforcing consistency.</li>
+      </ul>
+    </div>
+
+    <!-- Id3aLab -->
+    <div class="exp-item">
+      <div class="exp-header">
+        <div>
+          <div class="exp-role">Frontend Developer <span class="exp-company">— Id3aLab @ Università Bicocca</span></div>
+          <div class="exp-meta">Milan · Dec 2021 – Jun 2022 · Cultural Heritage (Regione Lombardia)</div>
+        </div>
+      </div>
+      <ul class="exp-details">
+        <li><strong>Search Journey</strong> — three visualization modes: card grid, Google Maps, custom D3.js tube map over 500+ locations.</li>
+        <li><strong>Custom coordinate algorithm</strong> — built from scratch to map real-world locations onto a schematic tube map.</li>
+        <li><strong>Legacy migration</strong> — full codebase ES5 → ES6, introducing modules, arrow functions, and modern patterns.</li>
+      </ul>
+    </div>
+
+  </div>
+</section>
+
+<!-- EDUCATION -->
+<section id="education">
+  <div class="section-label">Education</div>
+  <h2 class="section-title">Academic background</h2>
+  <div class="edu-grid">
+    <div class="edu-card">
+      <h3>MSc, Communication Theory and Technology</h3>
+      <div class="school">Università Milano-Bicocca</div>
+      <div><span class="year">2023</span> · <span class="grade">110/110 cum laude</span></div>
+    </div>
+    <div class="edu-card">
+      <h3>BSc, Psychological Science and Techniques</h3>
+      <div class="school">Università Milano-Bicocca</div>
+      <div><span class="year">2020</span></div>
+    </div>
+    <div class="edu-card">
+      <h3>Professional Certificate in Product Management</h3>
+      <div class="school">Product Heroes</div>
+      <div><span class="year">2025</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+  <div class="section-label">Contact</div>
+  <h2 class="section-title">Let's connect</h2>
+  <div class="contact-links">
+    <a href="mailto:leo.bo96@gmail.com" class="contact-link" aria-label="Email Leonardo"><span class="icon" aria-hidden="true">✉</span> leo.bo96@gmail.com</a>
+    <a href="tel:+393387904050" class="contact-link" aria-label="Call Leonardo"><span class="icon" aria-hidden="true">📱</span> +39 338 790 4050</a>
+    <a href="https://linkedin.com/in/leonardobonaventura" target="_blank" class="contact-link" aria-label="LinkedIn profile"><span class="icon" aria-hidden="true">in</span> LinkedIn</a>
+    <a href="https://leobo96.github.io" target="_blank" class="contact-link" aria-label="Portfolio website"><span class="icon" aria-hidden="true">🌐</span> Portfolio</a>
+  </div>
+  <p style="margin-top: 1.5rem; color: var(--text-muted); font-size: 0.88rem;">
+    Milan, Italy · Open to EU-remote or hybrid in Barcelona / Lisbon / Madrid / Milan<br>
+    Italian (native) · English (C1) · Spanish · French
+  </p>
+</section>
+
+</main>
+
+<footer>
+  <div class="footer-inner">
+    <span class="footer-thesis">I studied how people think. I build products they love.</span>
+    <span class="footer-credit">Leonardo Bonaventura © 2026</span>
+  </div>
+</footer>
+
+<script>
+  // Progressive enhancement: mark JS availability
+  document.body.classList.add('js');
+
+  // Scroll reveal for timeline items
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+  }, { threshold: 0.15 });
+  document.querySelectorAll('.exp-item').forEach(el => observer.observe(el));
+
+  // Active nav state
+  const sections = document.querySelectorAll('section[id], header[id]');
+  const navLinks = document.querySelectorAll('nav .links a');
+  const navObserver = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        navLinks.forEach(link => {
+          link.classList.toggle('active', link.getAttribute('href') === '#' + e.target.id);
+        });
+      }
+    });
+  }, { rootMargin: '-40% 0px -55% 0px' });
+  sections.forEach(s => navObserver.observe(s));
+
+  // Nav background on scroll
+  window.addEventListener('scroll', () => {
+    document.querySelector('nav').style.borderBottomColor =
+      window.scrollY > 50 ? 'var(--border)' : 'transparent';
+  });
+</script>
+
+</body>
+</html>
